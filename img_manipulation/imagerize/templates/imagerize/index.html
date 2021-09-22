@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+
+    <title>Imagerize</title>
+    <style>
+        .border-3 {
+            border-width: 3px !important;
+        }
+
+        body {
+
+            background-color: #8e97a8;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark mb-3">
+        <span class="navbar-brand mb-0 h1 text-success font-italic"><a href="{% url 'index' %}">Image Manipulation</a></span>
+    </nav>
+
+    <div class="container">
+        <center>
+            <h1 class="h3 font-italic mb-3 text-white">Imagerize</h1>
+        </center>
+
+        <center class="mb-4">
+            <img src="https://cdn-codespeedy.pressidium.com/wp-content/uploads/2019/11/RGB-and-grayscale-image.png" class="img-fluid" alt="Responsive image">
+        </center>
+
+        <div id="form-container" class="border-3">
+            <form enctype="multipart/form-data" method="POST" action="">
+                {% csrf_token %}
+                <select class="form-control" name="choose_option">
+                    <option>Image To Sketch</option>
+                    <option>Image To Cartoon</option>
+                    <option>Image To GrayScale</option>
+                    <option>Image To Contour</option>
+                    <option>Image To Enhanced Image</option>
+                    <option>Image To Edges</option>
+
+                </select>
+
+                <div class="form-group mt-4">
+                    <label for="exampleFormControlFile1"><strong>Choose an image</strong></label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="choose_file">
+                </div><!-- End form-group for file input-->
+
+                <center>
+                    <input type="submit" value="Convert" class="btn btn-info mt-2" />
+                </center>
+            </form>
+        </div><!-- End form-container -->
+    </div><!-- End of container -->
+    <!-- Footer -->
+
+    <footer class="page-footer font-small bg-dark mt-5">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-white">© 2021 Copyright:
+            <a href="https://github.com/owolabiadebayo">owolabi adebayo</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
